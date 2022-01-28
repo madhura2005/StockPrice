@@ -22,6 +22,8 @@ The API endpoints to be executed from the attached POSTMAN collections
 
 http://localhost:8080/dowjones/api/v1/stocks/
 
+Click "Choose Files" in Body and add 'dow_jones_index.csv' file as value from the repository
+
 ### 2. Read stock info by stock ticker and quarter
 
 http://localhost:8080/dowjones/api/v1/stocks?stockTicker=AA&quarter=1
@@ -29,6 +31,8 @@ http://localhost:8080/dowjones/api/v1/stocks?stockTicker=AA&quarter=1
 ### 3. Create new stock record
 
 http://localhost:8080/dowjones/api/v1/stock
+
+Select "JSON(application/json)" from the drop down in raw Body in Postman
 
 ## Assumptions and Enhancements
 
