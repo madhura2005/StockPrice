@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "becafd14-cefc-4f19-a7af-4b1059ef288e",
+		"name": "Stock Analysis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload stock data set",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/personalrepo/dow_jones_index.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/dowjones/api/v1/stocks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dowjones",
+						"api",
+						"v1",
+						"stocks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read data by stock ticker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dowjones/api/v1/stocks?stockTicker=AA&quarter=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dowjones",
+						"api",
+						"v1",
+						"stocks"
+					],
+					"query": [
+						{
+							"key": "stockTicker",
+							"value": "AA"
+						},
+						{
+							"key": "quarter",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new stock record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \r\n        \"quarter\": 3,\r\n        \"stock\": \"AA\",\r\n        \"date\": \"3/25/2011\",\r\n        \"open\": \"$16.38 \",\r\n        \"high\": \"$17.24 \",\r\n        \"low\": \"$16.26 \",\r\n        \"close\": \"$17.09 \",\r\n        \"volume\": 95550392,\r\n        \"percentChangePrice\": 4.33455,\r\n        \"percentChangeVolumeOverLastWk\": -26.71060729,\r\n        \"previousWeeksVolume\": 130374108,\r\n        \"nextWeeksOpen\": \"$17.13 \",\r\n        \"nextWeeksClose\": \"$17.47 \",\r\n        \"percentChangeNextWeeksPrice\": 1.98482,\r\n        \"daysToNextDividend\": 48,\r\n        \"percentReturnNextDividend\": 0.175541\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dowjones/api/v1/stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dowjones",
+						"api",
+						"v1",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
